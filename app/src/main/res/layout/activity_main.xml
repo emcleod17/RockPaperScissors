@@ -28,7 +28,7 @@
             android:id="@+id/button"
             android:layout_gravity="center_horizontal"
             android:layout_weight="0"
-            android:onClick="playPressed()" />
+            android:onClick="&quot;playPressed&quot;" />
 
     </LinearLayout>
 </RelativeLayout>
