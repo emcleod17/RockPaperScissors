@@ -106,9 +106,11 @@ public class PlayFragment extends Fragment {
 
                 if(player1Choice == null) {
                    //TODO player 1 chose Rock
+                    player1Choice = "Rock";
                 }
                 else{
                     //TODO player 2 chose Rock
+                    player2Choice = "Rock";
                 }
 
             }
@@ -120,11 +122,11 @@ public class PlayFragment extends Fragment {
 
                 if(player1Choice == null) {
                     //TODO
-
+                    player1Choice = getString(R.string.rock);
                 }
                 else{
                     //TODO
-
+                    player2Choice = getString(R.string.rock);
                 }
             }
         });
@@ -135,11 +137,11 @@ public class PlayFragment extends Fragment {
 
                 if(player1Choice == null) {
                     //TODO
-
+                    player1Choice = "Scissors";
                 }
                 else{
                     //TODO
-
+                    player2Choice = "Scissors";
                 }
             }
         });
