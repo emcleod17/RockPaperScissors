@@ -2,6 +2,7 @@ package com.cs407_android.rockpaperscissors;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.net.Uri;
 import android.os.Bundle;
@@ -106,11 +107,24 @@ public class PlayFragment extends Fragment {
 
                 if(player1Choice == null) {
                    //TODO player 1 chose Rock
-                    player1Choice = "Rock";
+                    player1Choice = getString(R.string.rock);
+                    FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                    transaction.replace(R.id.main_fragment_container, PlayFragment.newInstance(getString(R.string.rock), null))
+                            .addToBackStack(null)
+                            .commit();
                 }
                 else{
                     //TODO player 2 chose Rock
-                    player2Choice = "Rock";
+                    player2Choice = getString(R.string.rock); //Not really necessary
+                    if (player1Choice == getString(R.string.rock)) {
+                        displayWinner("It's a draw!");
+                    }
+                    else if (player1Choice == getString(R.string.paper)) {
+                        displayWinner("Player 1!");
+                    }
+                    else if (player1Choice == getString(R.string.scissors)) {
+                        displayWinner("Player 2!");
+                    }
                 }
 
             }
@@ -122,11 +136,24 @@ public class PlayFragment extends Fragment {
 
                 if(player1Choice == null) {
                     //TODO
-                    player1Choice = getString(R.string.rock);
+                    player1Choice = getString(R.string.paper);
+                    FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                    transaction.replace(R.id.main_fragment_container, PlayFragment.newInstance(getString(R.string.paper), null))
+                            .addToBackStack(null)
+                            .commit();
                 }
                 else{
                     //TODO
-                    player2Choice = getString(R.string.rock);
+                    player2Choice = getString(R.string.paper); //Not necessary
+                    if (player1Choice == getString(R.string.rock)) {
+                        displayWinner("Player 2!");
+                    }
+                    else if (player1Choice == getString(R.string.paper)) {
+                        displayWinner("It's a draw!");
+                    }
+                    else if (player1Choice == getString(R.string.scissors)) {
+                        displayWinner("Player 1!");
+                    }
                 }
             }
         });
@@ -137,11 +164,24 @@ public class PlayFragment extends Fragment {
 
                 if(player1Choice == null) {
                     //TODO
-                    player1Choice = "Scissors";
+                    player1Choice = getString(R.string.scissors);
+                    FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                    transaction.replace(R.id.main_fragment_container, PlayFragment.newInstance(getString(R.string.scissors), null))
+                            .addToBackStack(null)
+                            .commit();
                 }
                 else{
                     //TODO
-                    player2Choice = "Scissors";
+                    player2Choice = getString(R.string.scissors); //Not necessary
+                    if (player1Choice == getString(R.string.rock)) {
+                        displayWinner("Player 1!");
+                    }
+                    else if (player1Choice == getString(R.string.paper)) {
+                        displayWinner("Player 2!");
+                    }
+                    else if (player1Choice == getString(R.string.scissors)) {
+                        displayWinner("It's a draw!");
+                    }
                 }
             }
         });
