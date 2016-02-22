@@ -13,6 +13,15 @@
         android:layout_alignParentTop="true"
         android:weightSum="1">
 
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            android:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
